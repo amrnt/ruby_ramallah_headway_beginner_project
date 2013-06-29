@@ -1,0 +1,16 @@
+$('form').before('<p style="color:green; font-size:28px;" id="message"> \
+                  Created new record: <%= @post.title %> \
+                </p>');
+
+$('table').append('<tr> \
+    <td><%= @post.title %></td> \
+    <td><%= @post.body %></td> \
+    <td><%= @post.published %></td> \
+    <td><%= @post.comments.count %></td> \
+    <td><%= link_to 'Show comments', post_comments_path(@post) %></td> \
+    <td><%= link_to 'Show', @post %></td> \
+    <td><%= link_to 'Edit', edit_post_path(@post) %></td> \
+    <td><%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td> \
+  </tr>');
+
+$('form').remove()

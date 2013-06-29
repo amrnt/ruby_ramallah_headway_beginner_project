@@ -1,0 +1,4 @@
+$('form').remove()
+$('#message').remove()
+
+$('table').after("<%= escape_javascript(render 'form') %>");
